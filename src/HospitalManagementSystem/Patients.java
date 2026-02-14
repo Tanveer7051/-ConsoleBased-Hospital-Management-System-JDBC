@@ -10,7 +10,7 @@ public class Patients {
 
     private Connection conn;
     private Scanner sc;
-    Validate v=new Validate(sc);
+    Validate v=new Validate(conn,sc);
 
     public Patients(Connection conn, Scanner sc){
         this.sc=sc;
@@ -22,7 +22,7 @@ public class Patients {
 
         System.out.println("Enter the Name of the patients");
         sc.nextLine();
-        String name=new Validate(sc).validateName();
+        String name=v.validateName();
         int age= v.validateAge();
 
         sc.nextLine();
@@ -122,7 +122,7 @@ public class Patients {
 
         String deleteQuery = "DELETE FROM patients WHERE patient_Id = ?";
 
-        int id=new Validate(sc).validateId();
+        int id=v.validateId();
         sc.nextLine();
 
         try {

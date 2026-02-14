@@ -25,7 +25,7 @@ public class HospitalMangeSystem {
 
             Doctors d = new Doctors(conn, sc);
             Patients p = new Patients(conn, sc);
-//            Appointments a = new Appointments(conn, sc);   // Appointment object
+            Appointment a = new Appointment(conn, sc);   // Appointment object
 
             while (true) {
 
@@ -108,23 +108,23 @@ public class HospitalMangeSystem {
                     case 3:
                         while (true) {
                             System.out.println("\n---- APPOINTMENT MENU ---- ");
-                            System.out.println("  1. Book Appointment-- Pending");
-                            System.out.println("  2. View Appointments-- Pending");
-                            System.out.println("  3. Cancel Appointment-- Pending");
+                            System.out.println("  1. Book Appointment");
+                            System.out.println("  2. View Appointments");
+                            System.out.println("  3. Cancel Appointment");
                             System.out.println("  4. Go To Main Menu");
 
                             int value = sc.nextInt();
 
                             switch (value) {
-//                                case 1:
-//                                    a.bookAppointment();   // Only method name
-//                                    break;
-//                                case 2:
-//                                    a.viewAppointments();  // Only method name
-//                                    break;
-//                                case 3:
-//                                    a.cancelAppointment(); // Only method name
-//                                    break;
+                                case 1:
+                                    a.bookAppointment();
+                                    break;
+                                case 2:
+                                    a.viewAppointments();
+                                    break;
+                                case 3:
+                                    a.cancelAppointment();
+                                    break;
                                 case 4:
                                     System.out.println("Returning to Main Menu...");
                                     break;
